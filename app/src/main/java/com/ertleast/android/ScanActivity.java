@@ -169,7 +169,7 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
                  // on below line we are calling a method to add new
         // course to sqlite data and pass all our values to it.
         dbHandler.addNewCourse(item_id, "courseDuration", item_id, "courseTracks");
-        Log.d("myapp", Log.getStackTraceString(new Exception()));
+
         // after adding the data we are displaying a toast message.
         Toast.makeText(this, "Course has been added.", Toast.LENGTH_SHORT).show();
 
@@ -189,7 +189,7 @@ class DBHandler extends SQLiteOpenHelper {
 
     // creating a constant variables for our database.
     // below variable is for our database name.
-    private static final String DB_NAME = "coursedb";
+    private static final String DB_NAME = "stock_offline";
 
     // below int is our database version
     private static final int DB_VERSION = 1;
