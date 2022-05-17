@@ -1,0 +1,266 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="css/holo.css">
+    <script type="text/javascript" src="js/zepto.min.js"></script>
+    <script type="text/javascript" src="js/mscorlib.min.js"></script>
+    <script type="text/javascript" src="js/biogenicsWebCalc.min.js"></script>
+    <link rel="stylesheet" href="css/calc.css">
+</head>
+<body class="holo holo-light">
+<div id="accent" class="holo-accent-blue">
+    <div class="holo-content">
+        <ul class="holo-list definition">
+            <li style="line-height:normal"><h3 style="font-weight: normal">The Edinburgh Post-Natal
+                Depression Scale (EPDS) is a 10 question self-rating scale used for postpartum
+                depression screening.
+            </h3></li>
+        </ul>
+        <ul class="holo-list">
+            <li>
+                <table style="border:0px;width:100%">
+                    <tr>
+                        <td style="vertical-align:top; width:1%;line-height:normal"><span>01.</span>
+                        </td>
+                        <td style="vertical-align:top; width:50%;min-width:150px;line-height:normal">
+                            <span>Able to laugh and see the funny side of things</span>
+                            <br/>
+                            <select class="calc-input" style="max-width:75%" name="Q1" id="input_0">
+                                <option value="0">As much as I always could</option>
+                                <option value="1">Not quite so much now</option>
+                                <option value="2">Definitely not so much now</option>
+                                <option value="3">Not at all</option>
+                            </select></td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table style="border:0px;width:100%">
+                    <tr>
+                        <td style="vertical-align:top; width:1%;line-height:normal"><span>02.</span>
+                        </td>
+                        <td style="vertical-align:top; width:50%;min-width:150px;line-height:normal">
+                            <span>Looked forward with enjoyment to things</span>
+                            <br/><select class="calc-input" style="max-width:75%" name="Q2"
+                                         id="input_1">
+                            <option value="0">As much as I ever did</option>
+                            <option value="1">Rather less than I used to</option>
+                            <option value="2">Definitely less than I used to</option>
+                            <option value="3">Hardly at all</option>
+                        </select>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table style="border:0px;width:100%">
+                    <tr>
+                        <td style="vertical-align:top; width:1%;line-height:normal"><span>03.</span>
+                        </td>
+                        <td style="vertical-align:top; width:50%;min-width:150px;line-height:normal">
+                            <span>Blamed myself unnecessarily when things went wrong</span>
+                            <br/>
+                            <select class="calc-input" style="max-width:75%" name="Q3" id="input_2">
+                                <option value="3">Yes, most of the time</option>
+                                <option value="2">Yes, some of the time</option>
+                                <option value="1">Not very often</option>
+                                <option value="0">No, never</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table style="border:0px;width:100%">
+                    <tr>
+                        <td style="vertical-align:top; width:1%;line-height:normal"><span>04.</span>
+                        </td>
+                        <td style="vertical-align:top; width:50%;min-width:150px;line-height:normal">
+                            <span>Anxious or worried for no good reason</span>
+                            <br/>
+                            <select class="calc-input" style="max-width:75%" name="Q4" id="input_3">
+                                <option value="0">No, not at all</option>
+                                <option value="1">Hardly ever</option>
+                                <option value="2">Yes, sometimes</option>
+                                <option value="3">Yes, very often</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table style="border:0px;width:100%">
+                    <tr>
+                        <td style="vertical-align:top; width:1%;line-height:normal"><span>05.</span>
+                        </td>
+                        <td style="vertical-align:top; width:50%;min-width:150px;line-height:normal">
+                            <span>Felt scared or panicky for no very good reason</span>
+                            <br/>
+                            <select class="calc-input" style="max-width:75%" name="Q5" id="input_4">
+                                <option value="3">Yes, quite a lot</option>
+                                <option value="2">Yes, sometimes</option>
+                                <option value="1">No, not much</option>
+                                <option value="0">No, not at all</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table style="border:0px;width:100%">
+                    <tr>
+                        <td style="vertical-align:top; width:1%;line-height:normal"><span>06.</span>
+                        </td>
+                        <td style="vertical-align:top; width:50%;min-width:150px;line-height:normal">
+                            <span>Things have been getting on top of me</span>
+                            <br/>
+                            <select class="calc-input" style="max-width:75%" name="Q6" id="input_5">
+                                <option value="3">Yes, mostly not coping well</option>
+                                <option value="2">Yes, sometimes not coping well as usual</option>
+                                <option value="1">No, mostly coping quite well</option>
+                                <option value="0">No, coping as well as ever</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table style="border:0px;width:100%">
+                    <tr>
+                        <td style="vertical-align:top; width:1%;line-height:normal"><span>07.</span>
+                        </td>
+                        <td style="vertical-align:top; width:50%;min-width:150px;line-height:normal">
+                            <span>So unhappy that I have had difficulty sleeping</span>
+                            <br/>
+                            <select class="calc-input" style="max-width:75%" name="Q7" id="input_6">
+                                <option value="3">Yes, most of the time</option>
+                                <option value="2">Yes, sometimes</option>
+                                <option value="1">Not very often</option>
+                                <option value="0">No, not at all</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table style="border:0px;width:100%">
+                    <tr>
+                        <td style="vertical-align:top; width:1%;line-height:normal"><span>08.</span>
+                        </td>
+                        <td style="vertical-align:top; width:50%;min-width:150px;line-height:normal">
+                            <span>Felt sad or miserable</span>
+                            <br/>
+                            <select class="calc-input" style="max-width:75%" name="Q8" id="input_7">
+                                <option value="3">Yes, most of the time</option>
+                                <option value="2">Yes, quite often</option>
+                                <option value="1">Not very often</option>
+                                <option value="0">No, not at all</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table style="border:0px;width:100%">
+                    <tr>
+                        <td style="vertical-align:top; width:1%;line-height:normal"><span>09.</span>
+                        </td>
+                        <td style="vertical-align:top; width:50%;min-width:150px;line-height:normal">
+                            <span>So unhappy that I have been crying</span>
+                            <br/>
+                            <select class="calc-input" style="max-width:75%" name="Q9" id="input_8">
+                                <option value="3">Yes, most of the time</option>
+                                <option value="2">Yes, quite often</option>
+                                <option value="1">Only occasionally</option>
+                                <option value="0">No, never</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table style="border:0px;width:100%">
+                    <tr>
+                        <td style="vertical-align:top; width:1%;line-height:normal"><span>10.</span>
+                        </td>
+                        <td style="vertical-align:top; width:50%;min-width:150px;line-height:normal">
+                            <span>Thought of harming myself has occurred to me</span>
+                            <br/>
+                            <select class="calc-input" style="max-width:75%" name="Q10"
+                                    id="input_9">
+                                <option value="3">Yes, quite often</option>
+                                <option value="2">Sometimes</option>
+                                <option value="1">Hardly ever</option>
+                                <option value="0">Never</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+        </ul>
+        <div class="holo-buttons center">
+            <button class="holo-button" id="btnCalc">Calculate</button>
+        </div>
+        <h2 class="holo-divider">Results</h2>
+        <ul class="holo-list" id="lstResults">
+            <li>
+                <table style="border:0px;width:100%">
+                    <tr>
+                        <td style="vertical-align:top; width:50%;line-height:normal">
+                            <span>Scale</span></td>
+                        <td style="width:50%;min-width:100px;padding-left:5px; line-height:normal">
+                            <div class="calc-output normal" name="scale" id="output_0"></div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+<script>
+
+			$(document).ready(function() {
+				function recalc(event) {
+					var o=new UBM.biogenicsCal.Calculators.EdinburghPostNatalDepressionScaleCalculator();
+                    var values=[];
+
+
+					$('input.calc-input,select.calc-input').each(function(index, value) {
+						var v=($(this).attr('type')=='checkbox') ? ($(this).attr('checked') ? 1 : 0) : $(this).val();
+						//var v=$(this).is(':checkbox') ? $(this).attr('checked')=='checked' ? 1 : 0 : $(this).val();
+						// Check if it has a unit, grab the unit and do conversion if necessary
+						if ($(this).data('unittype'))
+						{
+							var u=$('#'+$(this).attr('id') + '_unit').val().split('|');
+							var um=new UBM.biogenicsCal.CalculatorCore.UnitManager();
+							v=um.convertToDefaultUnitValue(u[0], v, u[1]).toString();
+						}
+						values.push(v);
+					});
+
+					var outvalues=o.calculate(values);
+
+					$('.calc-output').each(function(index, value) {
+						var v=outvalues[index];
+						if (typeof(v)=='string') {
+							if (v.match('^NaN'))
+								v='';
+						}
+						$(this).text(v);
+					});
+
+				}
+
+				//$('input.calc-input,select.calc-input,select.calc-input-unit').change(recalc);
+				$('#btnCalc').click(recalc);
+			});
+
+
+
+</script>
+</html>

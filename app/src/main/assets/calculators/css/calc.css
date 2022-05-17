@@ -1,0 +1,44 @@
+input.calc-input { width:5em !important; text-align: right;}
+/*select.calc-input-unit { vertical-align:top;}*/
+/*input.with-unit {  width:5em !important; }*/
+#lstResults h3.ui-li-heading { white-space: normal; }
+
+/* From jQuery Mobile */
+.ui-grid-a, .ui-grid-b, .ui-grid-c, .ui-grid-d {
+    overflow: hidden;
+}
+
+.ui-grid-a .ui-block-a {
+    clear: left;
+}
+
+.ui-grid-a > *:nth-child(n) {
+    margin-right: -0.5px;
+    width: 50%;
+}
+.ui-block-a, .ui-block-b, .ui-block-c, .ui-block-d, .ui-block-e {
+    -moz-box-sizing: border-box;
+    border: 0 none;
+    float: left;
+    min-height: 1px;
+    padding: 0;
+}
+
+li > div.ui-grid-a {
+padding: 0 16px;
+}
+
+.center
+{
+margin-left:auto;
+margin-right:auto;
+width:40%;
+text-align: center;
+}
+
+ul.definition {
+  border-radius: 10px;
+  border: 3px solid #777777;
+margin: 20px;
+}
+

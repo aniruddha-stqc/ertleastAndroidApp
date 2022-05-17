@@ -1,0 +1,221 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="css/holo.css">
+    <script type="text/javascript" src="js/zepto.min.js"></script>
+    <script type="text/javascript" src="js/mscorlib.min.js"></script>
+    <script type="text/javascript" src="js/biogenicsWebCalc.min.js"></script>
+    <link rel="stylesheet" href="css/calc.css">
+</head>
+<body class="holo holo-light">
+<div id="accent" class="holo-accent-blue">
+    <div class="holo-content">
+        <ul class="holo-list definition">
+            <li style="line-height:normal"><h3 style="font-weight: normal">The Modified Alvarado
+                Appendicitis Score is a numerical scoring system used to diagnose appendicitis in an
+                adult population when the differential white blood cell count is not available.</h3>
+            </li>
+        </ul>
+        <ul class="holo-list">
+            <li>
+                <table style="border:0px;width:100%">
+                    <tr>
+                        <td style="width:50%;line-height:normal">
+                            <span>Migratory RLQ abdominal pain</span></td>
+                        <td style="width:50%;min-width:100px;text-align:right">
+                            <div class="holo-switch">
+                                <input type="checkbox" class="calc-input"
+                                       name="MigratoryRLQabdominalpain" id="input_0"
+                                       value="1"><label class="holo-label" for="input_0"> </label>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table style="border:0px;width:100%">
+                    <tr>
+                        <td style="width:50%;line-height:normal"><span>Loss of appetite</span></td>
+                        <td style="width:50%;min-width:100px;text-align:right">
+                            <div class="holo-switch">
+                                <input type="checkbox" class="calc-input"
+                                       name="Lossofappetiteorurineketones" id="input_1"
+                                       value="1"><label class="holo-label" for="input_1"> </label>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table style="border:0px;width:100%">
+                    <tr>
+                        <td style="width:50%;line-height:normal"><span>Nausea/vomiting</span></td>
+                        <td style="width:50%;min-width:100px;text-align:right">
+                            <div class="holo-switch">
+                                <input type="checkbox" class="calc-input" name="Nauesavomiting"
+                                       id="input_2" value="1"><label class="holo-label"
+                                                                     for="input_2"> </label>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table style="border:0px;width:100%">
+                    <tr>
+                        <td style="width:50%;line-height:normal"><span>RLQ tenderness</span></td>
+                        <td style="width:50%;min-width:100px;text-align:right">
+                            <div class="holo-switch">
+                                <input type="checkbox" class="calc-input" name="RLQtenderness"
+                                       id="input_3" value="2"><label class="holo-label"
+                                                                     for="input_3"> </label>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table style="border:0px;width:100%">
+                    <tr>
+                        <td style="width:50%;line-height:normal"><span>RLQ rebound tenderness</span>
+                        </td>
+                        <td style="width:50%;min-width:100px;text-align:right">
+                            <div class="holo-switch">
+                                <input type="checkbox" class="calc-input"
+                                       name="RLQreboundtenderness" id="input_4" value="1"><label
+                                    class="holo-label" for="input_4"> </label>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table style="border:0px;width:100%">
+                    <tr>
+                        <td style="width:50%;line-height:normal">
+                            <span>Fever &gt; 37.3°C (99.14°F)</span></td>
+                        <td style="width:50%;min-width:100px;text-align:right">
+                            <div class="holo-switch">
+                                <input type="checkbox" class="calc-input" name="fever" id="input_5"
+                                       value="1"><label class="holo-label" for="input_5"> </label>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table style="border:0px;width:100%">
+                    <tr>
+                        <td style="width:50%;line-height:normal">
+                            <span>Leukocytosis &gt; 10k WBCs</span></td>
+                        <td style="width:50%;min-width:100px;text-align:right">
+                            <div class="holo-switch">
+                                <input type="checkbox" class="calc-input" name="wbcs" id="input_6"
+                                       value="2"><label class="holo-label" for="input_6"> </label>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table style="border:0px;width:100%">
+                    <tr style="display:none">
+                        <td style="width:50%;line-height:normal"><span>Additional sign (e.g. cough test, Rovsing's sign, or rectal tenderness)</span>
+                        </td>
+                        <td style="width:50%;min-width:100px;text-align:right">
+                            <div class="holo-switch">
+                                <input type="checkbox" class="calc-input" name="additional"
+                                       id="input_7" value="1"><label class="holo-label"
+                                                                     for="input_7"> </label>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+        </ul>
+        <div class="holo-buttons center">
+            <button class="holo-button" id="btnCalc">Calculate</button>
+        </div>
+        <h2 class="holo-divider">Results</h2>
+        <ul class="holo-list" id="lstResults">
+            <li>
+                <table style="border:0px;width:100%">
+                    <tr>
+                        <td style="vertical-align:top; width:50%;line-height:normal">
+                            <span>Score</span></td>
+                        <td style="width:50%;min-width:100px;padding-left:5px; line-height:normal">
+                            <div class="calc-output normal" name="Score" id="output_0"></div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table style="border:0px;width:100%">
+                    <tr>
+                        <td style="vertical-align:top; width:50%;line-height:normal"><span>Recommendation</span>
+                        </td>
+                        <td style="width:50%;min-width:100px;padding-left:5px; line-height:normal">
+                            <div class="calc-output normal" name="Recommendation"
+                                 id="output_1"></div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+<script>
+
+			$(document).ready(function() {
+				function recalc(event) {
+					var o=new UBM.biogenicsCal.Calculators.ModifiedAlvaradoCalculator();
+var values=[];
+					
+					$('input.calc-input,select.calc-input').each(function(index, value) {
+						//var v=($(this).attr('type')=='checkbox') ? ($(this).attr('checked') ? 1 : 0) : $(this).val();
+						
+						var v = 0;
+						
+						if ($(this).attr('type')=='checkbox'  && $(this).attr('checked')){
+							v = $(this).val();
+						}
+						
+						//var v=$(this).is(':checkbox') ? $(this).attr('checked')=='checked' ? 1 : 0 : $(this).val();
+						// Check if it has a unit, grab the unit and do conversion if necessary
+						if ($(this).data('unittype'))
+						{
+							var u=$('#'+$(this).attr('id') + '_unit').val().split('|');
+							var um=new UBM.biogenicsCal.CalculatorCore.UnitManager();
+							v=um.convertToDefaultUnitValue(u[0], v, u[1]).toString();
+						}
+						
+						
+						values.push(v);
+					});
+					
+					var outvalues=o.calculate(values);
+					
+					$('.calc-output').each(function(index, value) {
+						var v=outvalues[index];
+						if (typeof(v)=='string') {
+							if (v.match('^NaN'))
+								v='';
+						}
+						$(this).text(v);
+					});
+					
+				}
+			
+				//$('input.calc-input,select.calc-input,select.calc-input-unit').change(recalc);
+				$('#btnCalc').click(recalc);
+			});
+
+
+
+</script>
+</html>

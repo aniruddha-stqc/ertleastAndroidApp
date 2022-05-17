@@ -1,0 +1,167 @@
+{
+  "categories": [
+    {
+      "name": "Anesthesiology",
+      "calculators": [
+        "Allowable Blood Loss",
+        "Bicarbonate Deficit",
+        "Body Mass Index (BMI)",
+        "Body Surface Area",
+        "Creatinine Clearance (Cockcroft-Gault)",
+        "Glasgow Coma Scale",
+        "pH (Henderson-Hasselbach Equation)",
+        "Urine Output"
+      ]
+    },
+    {
+      "name": "Cardiology",
+      "calculators": [
+        "Body Mass Index (BMI)",
+        "Body Surface Area",
+        "Chronotropic Index",
+        "Heart Rate",
+        "LDL Cholesterol",
+        "Target Heart Rate"
+      ]
+    },
+    {
+      "name": "Diabetes",
+      "calculators": [
+        "Body Mass Index (BMI)",
+        "Body Surface Area",
+        "Creatinine Clearance (Cockcroft-Gault)",
+        "Ideal Body Weight",
+        "LDL Cholesterol"
+      ]
+    },
+    {
+      "name": "Electrolytes",
+      "calculators": [
+        "Bicarbonate Deficit",
+        "Corrected Serum Calcium",
+        "Free Water Deficit",
+        "pH (Henderson-Hasselbach Equation)",
+        "Sodium Deficit"
+      ]
+    },
+    {
+      "name": "ER / ICU",
+      "calculators": [
+        "Allowable Blood Loss",
+        "Alvarado Appendicitis Score",
+        "Alvarado Appendicitis Score, Modified",
+        "Bohr Dead Space",
+        "Corrected Serum Calcium",
+        "Creatinine Clearance (Cockcroft-Gault)",
+        "Free Water Deficit",
+        "Glasgow Coma Scale",
+        "Heart Rate",
+        "Ideal Body Weight",
+        "pH (Henderson-Hasselbach Equation)",
+        "Sodium Deficit",
+        "Urine Output"
+      ]
+    },
+    {
+      "name": "Evidence-Based Medicine",
+      "calculators": [
+        "Number Needed to Harm",
+        "Number Needed to Treat"
+      ]
+    },
+    {
+      "name": "General",
+      "calculators": [
+        "Body Mass Index (BMI)",
+        "Edinburgh Post Natal Depression Score"
+      ]
+    },
+    {
+      "name": "Gastrointestinal",
+      "calculators": [
+        "Edinburgh Post Natal Depression Score",
+        "Iron Deficit",
+        "pH (Henderson-Hasselbach Equation)"
+      ]
+    },
+    {
+      "name": "Geriatrics",
+      "calculators": [
+        "Abbreviated Mental Test Score (AMTS)"
+      ]
+    },
+    {
+      "name": "Neurology",
+      "calculators": [
+        "Abbreviated Mental Test Score (AMTS)",
+        "ABCD Score",
+        "Glasgow Coma Scale"
+      ]
+    },
+    {
+      "name": "Nursing",
+      "calculators": [
+        "Body Mass Index (BMI)",
+        "Body Surface Area",
+        "Glasgow Coma Scale",
+        "Ideal Body Weight",
+        "Lean Body Weight",
+        "Target Heart Rate",
+        "Urine Output"
+      ]
+    },
+    {
+      "name": "Obstetrics",
+      "calculators": [
+        "Bishop Score"
+      ]
+    },
+    {
+      "name": "Paramedic",
+      "calculators": [
+        "Corrected Serum Calcium",
+        "Glasgow Coma Scale",
+        "pH (Henderson-Hasselbach Equation)",
+        "Sodium Deficit"
+      ]
+    },
+    {
+      "name": "Psychiatry",
+      "calculators": [
+        "Edinburgh Post Natal Depression Score"
+      ]
+    },
+    {
+      "name": "Pediatrics",
+      "calculators": [
+        "Body Mass Index (BMI)",
+        "Body Surface Area",
+        "Creatinine Clearance (Schwartz)",
+        "Free Water Deficit",
+        "Nottingham Eczema Severity Score",
+        "Urine Output"
+      ]
+    },
+    {
+      "name": "Pulmonary",
+      "calculators": [
+        "Bohr Dead Space",
+        "pH (Henderson-Hasselbach Equation)"
+      ]
+    },
+    {
+      "name": "Renal",
+      "calculators": [
+        "Bicarbonate Deficit",
+        "Corrected Serum Calcium",
+        "Creatinine Clearance (Cockcroft-Gault)",
+        "Creatinine Clearance (Schwartz)",
+        "Free Water Deficit",
+        "Iron Deficit",
+        "pH (Henderson-Hasselbach Equation)",
+        "Sodium Deficit",
+        "Urine Output"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "calculators": [
+    {
+      "name": "Abbreviated Mental Test Score (AMTS)",
+      "subtext": "Assessment tool to check for the cognitive function of elderly patients",
+      "calc-file": "AbbreviatedMentalTestScore.html",
+      "info-file": "RRR_AbbreviatedMentalTestScore.htm"
+    },
+    {
+      "name": "ABCD Score",
+      "subtext": "Restroke Risk",
+      "calc-file": "ABCD.html",
+      "info-file": "RRR_ABCD.htm"
+    },
+    {
+      "name": "Allowable Blood Loss",
+      "subtext": "Allowable pre-transfusion blood loss",
+      "calc-file": "AllowableBloodLoss.html",
+      "info-file": "RRR_allowable_blood_loss.htm"
+    },
+    {
+      "name": "Alvarado Appendicitis Score",
+      "subtext": "Predicts likelihood of acute appendicitis",
+      "calc-file": "Alvarado.html",
+      "info-file": "RRR_Alvarado.htm"
+    },
+    {
+      "name": "Bicarbonate Deficit",
+      "subtext": "Bicarbonate needed to reserve metabolic acidosis",
+      "calc-file": "BicarbDeficit.html",
+      "info-file": "RRR_BicarbDeficit.htm"
+    },
+    {
+      "name": "Bishop Score",
+      "subtext": "Predicts success of induction of labor",
+      "calc-file": "BishopScore.html",
+      "info-file": "RRR_BishopScore.htm"
+    },
+    {
+      "name": "Body Mass Index (BMI)",
+      "subtext": "",
+      "calc-file": "BMI.html",
+      "info-file": "RRR_bmi.htm"
+    },
+    {
+      "name": "Body Surface Area",
+      "subtext": "",
+      "calc-file": "BodySurfaceArea.html",
+      "info-file": "RRR_BodySurfaceArea.htm"
+    },
+    {
+      "name": "Bohr Dead Space",
+      "subtext": "Determines physiologic pulmonary dead space",
+      "calc-file": "BohrDeadSpace.html",
+      "info-file": "RRR_BohrDeadSpace.htm"
+    },
+    {
+      "name": "Chronotropic Index",
+      "subtext": "Compares maximum to resting heart rate",
+      "calc-file": "ChronotropicIndex.html",
+      "info-file": "RRR_chronotropic_index.htm"
+    },
+    {
+      "name": "Corrected Serum Calcium",
+      "subtext": "",
+      "calc-file": "CorrectedSerumCa.html",
+      "info-file": "RRR_CorrectedSerumCa.htm"
+    },
+    {
+      "name": "Creatinine Clearance (Cockcroft-Gault)",
+      "subtext": "",
+      "calc-file": "CreatinineClearanceCockcroftGaultIdealBodyWeight.html",
+      "info-file": "RRR_CreatinineClearanceCockcroftGaultIdealBodyWeight.htm"
+    },
+    {
+      "name": "Creatinine Clearance (Schwartz)",
+      "subtext": "",
+      "calc-file": "CreatinineClearanceSchwartz.html",
+      "info-file": "RRR_cr_clearance_schwartz.htm"
+    },
+    {
+      "name": "Edinburgh Post Natal Depression Score",
+      "subtext": "Screening test for post-natal depression",
+      "calc-file": "EdinburghPostNatalDepressionScale.html",
+      "info-file": "RRR_edinburghPNDscore.htm"
+    },
+    {
+      "name": "Glasgow Coma Scale",
+      "subtext": "",
+      "calc-file": "Glasgow.html",
+      "info-file": "RRR_Glasgow.htm"
+    },
+    {
+      "name": "Heart Rate",
+      "subtext": "",
+      "calc-file": "HeartRateFromEKG.html",
+      "info-file": "RRR_HeartRateFromEKG.htm"
+    },
+    {
+      "name": "pH (Henderson-Hasselbach Equation)",
+      "subtext": "Calculates via the Henderson-Hasselbach equation",
+      "calc-file": "HendersonHasselbach.html",
+      "info-file": "RRR_HendersonHasselbach.htm"
+    },
+    {
+      "name": "Ideal Body Weight",
+      "subtext": "",
+      "calc-file": "IdealBodyWeight.html",
+      "info-file": "RRR_IdealBodyWeight.htm"
+    },
+    {
+      "name": "Iron Deficit",
+      "subtext": "",
+      "calc-file": "IronDeficit.html",
+      "info-file": "RRR_IronDeficit.htm"
+    },
+    {
+      "name": "LDL Cholesterol",
+      "subtext": "",
+      "calc-file": "LDLCholesterol.html",
+      "info-file": "RRR_LDLCholesterol.htm"
+    },
+    {
+      "name": "Lean Body Weight",
+      "subtext": "",
+      "calc-file": "LeanBodyWeight.html",
+      "info-file": "RRR_LeanBodyWeight.htm"
+    },
+    {
+      "name": "Alvarado Appendicitis Score, Modified",
+      "subtext": "Predicts likelihood of acute appendicitis",
+      "calc-file": "ModifiedAlvarado.html",
+      "info-file": "RRR_AlvaradoModified.htm"
+    },
+    {
+      "name": "Number Needed to Harm",
+      "subtext": "For retrospective trials",
+      "calc-file": "NumberNeededToHarm.html",
+      "info-file": "RRR_NumberNeededToHarm.htm"
+    },
+    {
+      "name": "Number Needed to Treat",
+      "subtext": "For retrospective trials",
+      "calc-file": "NumberNeededToTreat.html",
+      "info-file": "RRR_NumberNeededToTreat.htm"
+    },
+    {
+      "name": "Sodium Deficit",
+      "subtext": "",
+      "calc-file": "SodiumDeficit.html",
+      "info-file": "RRR_SodiumDeficit.htm"
+    },
+    {
+      "name": "Target Heart Rate",
+      "subtext": "",
+      "calc-file": "TargetHeartRate.html",
+      "info-file": "RRR_TargetHeartRate.htm"
+    },
+    {
+      "name": "Urine Output",
+      "subtext": "",
+      "calc-file": "UrineOutput.html",
+      "info-file": "RRR_UrineOutput.htm"
+    },
+    {
+      "name": "Free Water Deficit",
+      "subtext": "",
+      "calc-file": "WaterDeficit.html",
+      "info-file": "RRR_WaterDeficit.htm"
+    },
+    {
+      "name": "Nottingham Eczema Severity Score",
+      "subtext": "For childhood atopic eczema",
+      "calc-file": "NottinghamEczemaSeverityScore.html",
+      "info-file": "RRR_NottinghamEczema.htm"
+    }
+  ]
+}

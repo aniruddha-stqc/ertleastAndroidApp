@@ -1,0 +1,155 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="css/holo.css">
+    <script type="text/javascript" src="js/zepto.min.js"></script>
+    <script type="text/javascript" src="js/mscorlib.min.js"></script>
+    <script type="text/javascript" src="js/biogenicsWebCalc.min.js"></script>
+    <link rel="stylesheet" href="css/calc.css">
+</head>
+<body class="holo holo-light">
+<div id="accent" class="holo-accent-blue">
+    <div class="holo-content">
+        <ul class="holo-list definition">
+            <li style="line-height:normal"><h3 style="font-weight: normal">ABCD Risk Score is used
+                to identify individuals at high early risk of stroke after a transient ischaemic
+                attack.</h3></li>
+        </ul>
+        <ul class="holo-list">
+            <li>
+                <table style="border:0px;width:100%">
+                    <tr>
+                        <td style="width:50%;line-height:normal"><span>Age &gt; 60 Years</span></td>
+                        <td style="width:50%;min-width:100px;text-align:right">
+                            <div class="holo-switch">
+                                <input type="checkbox" class="calc-input" name="age" id="input_0"
+                                       value="true"><label class="holo-label"
+                                                           for="input_0"> </label>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table style="border:0px;width:100%">
+                    <tr>
+                        <td style="width:50%;line-height:normal"><span>SBP ≥ 140 or DBP ≥ 90</span>
+                        </td>
+                        <td style="width:50%;min-width:100px;text-align:right">
+                            <div class="holo-switch">
+                                <input type="checkbox" class="calc-input" name="bp" id="input_1"
+                                       value="true"><label class="holo-label"
+                                                           for="input_1"> </label>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table style="border:0px;width:100%">
+                    <tr>
+                        <td style="vertical-align:top; width:50%;min-width:150px;line-height:normal">
+                            <span>Presented Clinical Features</span>
+                            <br/><select class="calc-input" style="max-width:75%"
+                                         name="PresentedClinicalFeatures" id="input_2">
+                            <option value="2">Unilateral weakness</option>
+                            <option value="1">Speech disturbance (no weakness)</option>
+                            <option value="0">Other</option>
+                        </select>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table style="border:0px;width:100%">
+                    <tr>
+                        <td style="vertical-align:top; width:50%;min-width:150px;line-height:normal">
+                            <span>TIA Duration</span>
+                            <br/><select class="calc-input" style="max-width:75%" name="tia"
+                                         id="input_3">
+                            <option value="0">0–10 minutes</option>
+                            <option value="1">10–59 minutes</option>
+                            <option value="2">≥ 60 minutes</option>
+                        </select>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+        </ul>
+        <div class="holo-buttons center">
+            <button class="holo-button" id="btnCalc">Calculate</button>
+        </div>
+        <h2 class="holo-divider">Results</h2>
+        <ul class="holo-list" id="lstResults">
+            <li>
+                <table style="border:0px;width:100%">
+                    <tr>
+                        <td style="vertical-align:top; width:50%;line-height:normal"><span>ABCD Risk Score</span>
+                        </td>
+                        <td style="width:50%;min-width:100px;padding-left:5px; line-height:normal">
+                            <div class="calc-output normal" name="score" id="output_0"></div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table style="border:0px;width:100%">
+                    <tr>
+                        <td style="vertical-align:top; width:50%;line-height:normal"><span>7-day stroke risk</span>
+                        </td>
+                        <td style="width:50%;min-width:100px;padding-left:5px; line-height:normal">
+                            <div class="calc-output normal" name="risk" id="output_1"></div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+<script>
+
+			$(document).ready(function() {
+				function recalc(event) {
+
+					var o=new UBM.biogenicsCal.Calculators.ABCDCalculator();
+					var values= new Array();
+					
+					$('input.calc-input,select.calc-input').each(function(index, value) {
+						var v=($(this).attr('type')=='checkbox') ? ($(this).attr('checked') ? 1 : 0) : $(this).val();
+						//var v=$(this).is(':checkbox') ? $(this).attr('checked')=='checked' ? 1 : 0 : $(this).val();
+						// Check if it has a unit, grab the unit and do conversion if necessary
+						if ($(this).data('unittype'))
+						{
+							var u=$('#'+$(this).attr('id') + '_unit').val().split('|');
+							var um=new UBM.biogenicsCal.CalculatorCore.UnitManager();
+							v=um.convertToDefaultUnitValue(u[0], v, u[1]).toString();
+						}
+						values.push(v);
+					});
+
+					var outvalues=o.calculate(values);
+					
+					$('.calc-output').each(function(index, value) {
+						var v=outvalues[index];
+						if (typeof(v)=='string') {
+							if (v.match('^NaN'))
+								v='';
+						}
+						$(this).text(v);
+					});
+					
+				}
+			
+				//$('input.calc-input,select.calc-input,select.calc-input-unit').change(recalc);
+				$('#btnCalc').click(recalc);
+			});
+
+
+
+</script>
+</html>

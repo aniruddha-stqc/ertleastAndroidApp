@@ -1,0 +1,147 @@
+<!DOCTYPE html
+        SYSTEM "about:legacy-compat">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="css/holo.css">
+    <script type="text/javascript" src="js/zepto.min.js"></script>
+    <script type="text/javascript" src="js/mscorlib.min.js"></script>
+    <script type="text/javascript" src="js/biogenicsWebCalc.min.js"></script>
+    <link rel="stylesheet" href="css/calc.css">
+</head>
+<body class="holo holo-light">
+<div id="accent" class="holo-accent-blue">
+    <div class="holo-content">
+        <ul class="holo-list definition">
+            <li style="line-height:normal">
+                <h3 style="font-weight: normal">The Nottingham Eczema Severity Score is a numerical
+                    scoring scale used in determining the severity of atopic eczema in
+                    children. </h3>
+            </li>
+        </ul>
+        <ul class="holo-list">
+            <li>
+                <table style="border:0px;width:100%">
+                    <tr>
+                        <td style="width:50%;line-height:normal"><span>In the last 12 months, how long has the child's skin condition been present in total?</span>
+                            <br/><select class="calc-input" name="howlong" id="input_0"
+                                         style="max-width:75%">
+                                <option value="1">Less than 6 weeks (1)</option>
+                                <option value="2">6 weeks to 3 months (2)</option>
+                                <option value="3">3 months to 6 months (3)</option>
+                                <option value="4">6 months to 9 months (4)</option>
+                                <option value="5">More than 9 months (5)</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table style="border:0px;width:100%">
+                    <tr>
+                        <td style="width:50%;line-height:normal"><span>In the last 12 months, how often has the child's sleep usually been disturbed by itching
+                              or scratching due to their skin problem?</span>
+                            <br/><select class="calc-input" name="itching" id="input_1"
+                                         style="max-width:75%">
+                                <option value="1">Sleep is not usually disturbed (1)</option>
+                                <option value="2">1 night per week on average (2)</option>
+                                <option value="3">2 or 3 nights per week on average (3)</option>
+                                <option value="4">4 or 5 nights per week on average (4)</option>
+                                <option value="5">6 or more nights per week on average (5)</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table style="border:0px;width:100%">
+                    <tr>
+                        <td style="width:50%;line-height:normal"><span>Areas of atopic eczema greater than 2 cm²</span>
+                            <br/><select class="calc-input" name="area" id="input_2"
+                                         style="max-width:75%">
+                                <option value="1">≤ 2 (1)</option>
+                                <option value="2">3 - 5 (2)</option>
+                                <option value="3">6 - 10 (3)</option>
+                                <option value="4">11 - 20 (4)</option>
+                                <option value="5">&gt; 20 (5)</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+        </ul>
+        <div class="holo-buttons center">
+            <button class="holo-button" id="btnCalc">Calculate</button>
+        </div>
+        <h2 class="holo-divider">Results</h2>
+        <ul class="holo-list" id="lstResults">
+            <li>
+                <table style="border:0px;width:100%">
+                    <tr>
+                        <td style="width:50%;padding-left:5px; line-height:normal;vertical-align:top;overflow:hidden">
+                            <span>Score</span></td>
+                        <td style="width:50%;min-width:100px;padding-left:5px; line-height:normal; text-align:right">
+                            <div class="calc-output normal" name="Score" id="output_0"></div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table style="border:0px;width:100%">
+                    <tr>
+                        <td style="width:50%;padding-left:5px; line-height:normal;vertical-align:top;overflow:hidden">
+                            <span>Recommendation</span></td>
+                        <td style="width:50%;min-width:100px;padding-left:5px; line-height:normal; text-align:right">
+                            <div class="calc-output normal" name="Recommendation"
+                                 id="output_1"></div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+  $(document).ready(function() {
+          function recalc(event) {
+  
+                  var o=new UBM.biogenicsCal.Calculators.NottinghamEczemaCalculator();
+                  var values= new Array();
+                  
+                  $('input.calc-input,select.calc-input').each(function(index, value) {
+                          var v=($(this).attr('type')=='checkbox') ? ($(this).attr('checked') ? 1 : 0) : $(this).val();
+                          //var v=$(this).is(':checkbox') ? $(this).attr('checked')=='checked' ? 1 : 0 : $(this).val();
+                          // Check if it has a unit, grab the unit and do conversion if necessary
+                          if ($(this).data('unittype'))
+                          {
+                                  var u=$('#'+$(this).attr('id') + '_unit').val().split('|');
+                                  var um=new UBM.biogenicsCal.CalculatorCore.UnitManager();
+                                  v=um.convertToDefaultUnitValue(u[0], v, u[1]).toString();
+                          }
+                          values.push(v);
+                  });
+  
+                  var outvalues=o.calculate(values);
+                  
+                  $('.calc-output').each(function(index, value) {
+                          var v=outvalues[index];
+                          if (typeof(v)=='string') {
+                                  if (v.match('^NaN'))
+                                          v='';
+                          }
+                          $(this).text(v);
+                  });
+                  
+          }
+  
+         // $('input.calc-input,select.calc-input,select.calc-input-unit').change(recalc);
+          $('#btnCalc').click(recalc);
+  });
+
+
+</script>
+</body>
+</html>
