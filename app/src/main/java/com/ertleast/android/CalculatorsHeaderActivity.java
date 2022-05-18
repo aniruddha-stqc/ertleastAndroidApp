@@ -2,12 +2,14 @@ package com.ertleast.android;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.ListIterator;
 
 
 public class CalculatorsHeaderActivity extends AppCompatActivity {
@@ -25,8 +27,25 @@ public class CalculatorsHeaderActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_calculatorsheader);
         setTitle(R.string.calculators);
+        DBHandler dbHandler = new DBHandler(this);
+        // on below line we are calling a method to add new
+        // course to sqlite data and pass all our values to it.
 
+
+        ListIterator<String> listIterator =  dbHandler.getAllStocks().listIterator();
+
+        System.out.println("Forward iteration");
         ArrayList<CalculatorsItem> exampleList = new ArrayList<>();
+//Forward iterator
+        while(listIterator.hasNext()) {
+            //Log.d("aniruddha",listIterator.next() );
+            //String item_name = listIterator.next();
+            exampleList.add(new CalculatorsItem(R.drawable.ic_android, listIterator.next(), "possibility of dementia"));
+
+        }
+
+        //DBHandler dbHandler =  DBHandler.getAllStocks();
+        /*
         exampleList.add(new CalculatorsItem(R.drawable.ic_android, "Abbreviated Mental Test Score", "possibility of dementia"));
         exampleList.add(new CalculatorsItem(R.drawable.ic_android, "ABCD Risk Score", "determine risk for stroke"));
         exampleList.add(new CalculatorsItem(R.drawable.ic_android, "Allowable Blood Loss", "maximum allowable blood loss"));
@@ -59,7 +78,7 @@ public class CalculatorsHeaderActivity extends AppCompatActivity {
         exampleList.add(new CalculatorsItem(R.drawable.ic_android, "Target Heart Rate", "maximum heart rate for exercise"));
         exampleList.add(new CalculatorsItem(R.drawable.ic_android, "Urine Output", "normal range of urine output"));
         exampleList.add(new CalculatorsItem(R.drawable.ic_android, "Water Deficit", "correct dehydration during fluid-replacement"));
-
+*/
         mRecyclerView = findViewById(R.id.recyclerView);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
