@@ -10,7 +10,7 @@
     <string name="miscellaneous">Miscellaneous</string>
     <string name="disease">Diseases</string>
     <string name="home">News</string>
-    <string name="drug">Drug Search</string>
+    <string name="drug">Find in ISR</string>
     <string name="english">English</string>
     <string name="thai">Thai</string>
     <string name="welcome_greeting">Welcome !</string>
@@ -19,7 +19,7 @@
     <string name="change_language">Change Language to Thai</string>
     <string name="settings">Settings</string>
     <string name="translation">Enable Thai translation</string>
-    <string name="calculators">Calculators</string>
+    <string name="calculators">Recent Scans</string>
     <string name="scanner">QR Barcode Scanner</string>
     <string name="scan_info">Scanned Information</string>
     <string name="tab_text_01">Multidisciplinary</string>
@@ -63,7 +63,7 @@
     <string name="Doctor">Doctor</string>
     <string name="AlliedHealthcare">Allied Healthcare</string>
     <string name="demo_slider_headlines">What causes Alzheimers? Scientists reveal</string>
-    <string name="search_drugs">Search drugs by brands, generic names</string>
+    <string name="search_drugs">Find in Internal Stock Register</string>
     <string name="SignInSuccessful">Sign In Successful</string>
     <string name="IncorrectCredentials">Incorrect credentials</string>
     <string name="SomethingWentWrong">Something went wrong</string>
@@ -71,6 +71,6 @@
     <string name="type_brand">Type: Brand</string>
     <string name="type_generic">Type: Generic</string>
     <string name="type_pharma">Type: Pharmacy</string>
-    <string name="language_setting">Change Language</string>
+    <string name="language_setting">Settings</string>
     <string name="speciality_details">Speciality Details</string>
 </resources>

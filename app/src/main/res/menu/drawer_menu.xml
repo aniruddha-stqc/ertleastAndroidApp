@@ -7,7 +7,8 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_home"
-            android:title="@string/home" />
+            android:title="@string/home"
+            android:visible="false"/>/>
         <item
             android:id="@+id/nav_drug"
             android:icon="@drawable/ic_drug"
@@ -15,7 +16,8 @@
         <item
             android:id="@+id/nav_disease"
             android:icon="@drawable/ic_speciality"
-            android:title="@string/speciality" />
+            android:title="@string/speciality"
+            android:visible="false"/>/>
         <item
             android:id="@+id/nav_speciality"
             android:icon="@drawable/ic_calculator"
@@ -38,15 +40,18 @@
         <item
             android:id="@+id/nav_share"
             android:icon="@drawable/ic_share"
-            android:title="@string/share" />
+            android:title="@string/share"
+            android:visible="false"/>/>
         <item
             android:id="@+id/nav_send"
             android:icon="@drawable/ic_contact"
-            android:title="@string/contact" />
+            android:title="@string/contact"
+            android:visible="false"/>/>
         <item
             android:id="@+id/nav_logout"
             android:icon="@drawable/ic_close"
-            android:title="@string/logout" />
+            android:title="@string/logout"
+            android:visible="false"/>/>
     </group>
     <!--
         <item android:title="@string/miscellaneous">

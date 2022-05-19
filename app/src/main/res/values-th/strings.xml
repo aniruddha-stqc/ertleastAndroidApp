@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="drug">ค้นหายา</string>
+    <string name="drug">Find in ISR</string>
     <string name="contact">สายด่วน ๒๕ x ๗</string>
     <string name="english">อังกฤษ</string>
     <string name="language">ภาษา</string>
@@ -18,7 +18,7 @@
     <string name="change_language">เปลี่ยนภาษาเป็นไทย</string>
     <string name="settings">การตั้งค่า</string>
     <string name="translation">เปิดใช้งานการแปลภาษาไทย</string>
-    <string name="calculators">เครื่องคิดเลข</string>
+    <string name="calculators">Recent Scans</string>
     <string name="scanner">เครื่องสแกนบาร์โค้ด QR</string>
     <string name="scan_info">ข้อมูลการสแกน</string>
     <string name="tab_text_01">สหสาขาวิชาชีพ</string>
@@ -62,7 +62,7 @@
     <string name="select_prof">เลือกอาชีพของคุณ</string>
     <string name="professional_profile">ข้อมูลมืออาชีพ</string>
     <string name="demo_slider_headlines">สาเหตุของโรคอัลไซเมอร์คืออะไร? นักวิทยาศาสตร์เปิดเผย</string>
-    <string name="search_drugs">ค้นหายาเสพติดโดยแบรนด์ชื่อสามัญ</string>
+    <string name="search_drugs">Find in Internal Stock Register</string>
     <string name="IncorrectCredentials">ข้อมูลรับรองไม่ถูกต้อง</string>
     <string name="SignInSuccessful">ลงชื่อเข้าใช้สำเร็จ</string>
     <string name="SomethingWentWrong">บางอย่างผิดพลาด</string>
@@ -71,6 +71,6 @@
     <string name="type_brand">ชนิด: ยี่ห้อ</string>
     <string name="type_generic">ชนิด: ทั่วไป</string>
     <string name="type_pharma">ชนิด: ร้านขายยา</string>
-    <string name="language_setting">เปลี่ยนภาษา</string>
+    <string name="language_setting">Settings</string>
     <string name="speciality_details">รายละเอียดพิเศษ</string>
 </resources>
