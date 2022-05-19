@@ -27,12 +27,8 @@
         <activity
             android:name="com.ertleast.android.LanguageActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/splashScreenTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            >
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name="com.ertleast.android.RegisterActivity"
@@ -40,9 +36,12 @@
 
         <activity
             android:name="com.ertleast.android.MainActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/splashScreenTheme">
             <intent-filter android:priority="100">
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity

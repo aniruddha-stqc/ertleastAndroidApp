@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         //setTitle(getResources().getString(R.string.app_name));
-        setTitle("Thai Pharma Index");
+        setTitle("CCTL App");
         //getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         //getSupportActionBar().setCustomView(R.layout.abs_layout);
 
@@ -150,8 +150,8 @@ public class MainActivity extends AppCompatActivity
 
 
         SharedPreferences prefs = getSharedPreferences("com.biogenics.data", Context.MODE_PRIVATE);
-        String mem_name = prefs.getString("mem_name", "0000000000");
-        String email = prefs.getString("email", "0000000000");
+        String mem_name = prefs.getString("mem_name", "CCTL");
+        String email = prefs.getString("email", "cctlkolkata@gmail.com");
 
 
         headerView.findViewById(R.id.text_username).setVisibility(View.VISIBLE);

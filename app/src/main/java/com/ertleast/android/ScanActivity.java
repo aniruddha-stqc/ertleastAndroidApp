@@ -1,20 +1,14 @@
 package com.ertleast.android;
 
 
-import android.content.ContentValues;
 import android.content.Context;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.media.AudioManager;
 import android.media.ToneGenerator;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -164,23 +158,51 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
             return;
         }
          */
+        location_dialog();
         DBHandler dbHandler = new DBHandler(this);
-                 // on below line we are calling a method to add new
+        // on below line we are calling a method to add new
         // course to sqlite data and pass all our values to it.
-        dbHandler.addNewCourse(item_id, "courseDuration", item_id, "courseTracks");
 
+        dbHandler.addNewCourse(item_id, "courseDuration", item_id, "courseTracks");
         // after adding the data we are displaying a toast message.
         Toast.makeText(this, "Stock Item saved locally", Toast.LENGTH_SHORT).show();
 
 
         ///
 
-        Intent intent = new Intent(this, ScrollViewActivity.class);
-        intent.putExtra("scan_info", result.getText());
-        startActivity(intent);
+        //Intent intent = new Intent(this, ScrollViewActivity.class);
+        //intent.putExtra("scan_info", result.getText());
+        //startActivity(intent);
     }
 
+    public void location_dialog() {
 
+        final AlertDialog.Builder alt_bld = new AlertDialog.Builder(this);
+        alt_bld.setTitle("Location where found");
+        alt_bld.setCancelable(false);
+        CharSequence[] csvFiles = {"CC Lab","Archival Room", "Junk Room", "SERET Lab"};
+        if(csvFiles.length==0){
+            alt_bld.setTitle("No item found");
+        } else {
+            alt_bld.setSingleChoiceItems(csvFiles, -1, new DialogInterface
+                    .OnClickListener() {
+                public void onClick(DialogInterface dialog, int item) {
+
+
+                    //regionsDialog();
+                    dialog.dismiss();
+                }
+            });
+        }
+        alt_bld.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int i) {
+                finish();
+            }
+        });
+        AlertDialog alert = alt_bld.create();
+        alert.show();
+    }
 }
 
 

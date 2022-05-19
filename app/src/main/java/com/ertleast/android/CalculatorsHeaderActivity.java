@@ -40,7 +40,7 @@ public class CalculatorsHeaderActivity extends AppCompatActivity {
         while(listIterator.hasNext()) {
             //Log.d("aniruddha",listIterator.next() );
             //String item_name = listIterator.next();
-            exampleList.add(new CalculatorsItem(R.drawable.ic_android, listIterator.next(), "possibility of dementia"));
+            exampleList.add(new CalculatorsItem(R.drawable.ic_android, listIterator.next(), ""));
 
         }
 
