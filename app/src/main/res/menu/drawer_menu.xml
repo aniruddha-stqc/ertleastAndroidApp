@@ -22,7 +22,7 @@
             android:id="@+id/nav_speciality"
             android:icon="@drawable/ic_calculator"
             android:title="@string/speciality"
-            android:visible="false"/>/>
+            android:visible="true"/>/>
         <item
             android:id="@+id/nav_scanner"
             android:icon="@drawable/ic_calculator"

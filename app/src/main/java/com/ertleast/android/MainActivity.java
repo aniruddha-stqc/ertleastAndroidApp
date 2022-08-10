@@ -1,8 +1,10 @@
 package com.ertleast.android;
 
 
+import android.app.AlertDialog;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
@@ -240,7 +242,9 @@ public class MainActivity extends AppCompatActivity
                 //To keep consistency the Bottom Navigation Menu item for Scanner is shown selected
                 //bottomNav.getMenu().setGroupCheckable(0, false, true);
                 //Launch the ScannerActivity
+                //location_dialog();
                 startActivity(new Intent(getApplicationContext(), ScanActivity.class));
+
                 //Leave the switch case
                 break;
             //Case for Calculators in Navigation Drawer
@@ -344,6 +348,40 @@ public class MainActivity extends AppCompatActivity
             unregisterReceiver(this.networkChangeReceiver);
         }
     }
+    public void location_dialog() {
+        final int selected_item ;
+        final AlertDialog.Builder alt_bld = new AlertDialog.Builder(this);
+        alt_bld.setTitle("Location where found");
+        alt_bld.setCancelable(false);
+        CharSequence[] csvFiles = {"CC Lab","Archival Room", "Junk Room", "SERET Lab"};
+        if(csvFiles.length==0){
+            alt_bld.setTitle("No item found");
+        } else {
+            alt_bld.setSingleChoiceItems(csvFiles, -1, new DialogInterface
+                    .OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    //dialog.dismiss();
+                }
 
+            });
+        }
+        alt_bld.setNeutralButton("None of These", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int i) {
+
+                        finish();
+                    }
+                });
+        alt_bld.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int i) {
+
+                finish();
+            }
+        });
+        AlertDialog alert = alt_bld.create();
+        alert.show();
+        ;
+    }
 
 }

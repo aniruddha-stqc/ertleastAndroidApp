@@ -38,7 +38,7 @@
     <string name="tab_text_14">Respirology</string>
     <string name="tab_text_15">Rheumatology</string>
     <string name="tab_text_16">Urology</string>
-    <string name="speciality">Speciality</string>
+    <string name="speciality">Upload to Server</string>
     <string name="net_available">Page will be reloaded shortly</string>
     <string name="net_not_available">No Internet Access</string>
     <string name="button_language">Choose English</string>

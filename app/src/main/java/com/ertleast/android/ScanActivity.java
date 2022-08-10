@@ -4,11 +4,14 @@ package com.ertleast.android;
 import android.content.Context;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.media.AudioManager;
 import android.media.ToneGenerator;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -48,7 +51,7 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
 
         if (currentApiVersion >= Build.VERSION_CODES.M) {
             if (checkPermission()) {
-                Toast.makeText(getApplicationContext(), "Hold code inside viewfinder", Toast.LENGTH_LONG).show();
+                //Toast.makeText(getApplicationContext(), "Hold code inside viewfinder", Toast.LENGTH_LONG).show();
             } else {
                 requestPermission();
             }
@@ -158,7 +161,10 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
             return;
         }
          */
-        location_dialog();
+
+
+
+        //location_dialog();
         DBHandler dbHandler = new DBHandler(this);
         // on below line we are calling a method to add new
         // course to sqlite data and pass all our values to it.
@@ -167,7 +173,7 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
         // after adding the data we are displaying a toast message.
         Toast.makeText(this, "Stock Item saved locally", Toast.LENGTH_SHORT).show();
 
-
+        finish();
         ///
 
         //Intent intent = new Intent(this, ScrollViewActivity.class);
@@ -175,34 +181,7 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
         //startActivity(intent);
     }
 
-    public void location_dialog() {
 
-        final AlertDialog.Builder alt_bld = new AlertDialog.Builder(this);
-        alt_bld.setTitle("Location where found");
-        alt_bld.setCancelable(false);
-        CharSequence[] csvFiles = {"CC Lab","Archival Room", "Junk Room", "SERET Lab"};
-        if(csvFiles.length==0){
-            alt_bld.setTitle("No item found");
-        } else {
-            alt_bld.setSingleChoiceItems(csvFiles, -1, new DialogInterface
-                    .OnClickListener() {
-                public void onClick(DialogInterface dialog, int item) {
-
-
-                    //regionsDialog();
-                    dialog.dismiss();
-                }
-            });
-        }
-        alt_bld.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int i) {
-                finish();
-            }
-        });
-        AlertDialog alert = alt_bld.create();
-        alert.show();
-    }
 }
 
 

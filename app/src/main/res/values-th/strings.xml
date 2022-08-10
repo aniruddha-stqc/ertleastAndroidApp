@@ -19,7 +19,7 @@
     <string name="settings">การตั้งค่า</string>
     <string name="translation">เปิดใช้งานการแปลภาษาไทย</string>
     <string name="calculators">Recent Scans</string>
-    <string name="scanner">เครื่องสแกนบาร์โค้ด QR</string>
+    <string name="scanner">Upload to Server</string>
     <string name="scan_info">ข้อมูลการสแกน</string>
     <string name="tab_text_01">สหสาขาวิชาชีพ</string>
     <string name="tab_text_02">โรคหัวใจและหลอดเลือด</string>
