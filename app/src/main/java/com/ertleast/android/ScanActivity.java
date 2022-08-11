@@ -169,16 +169,15 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
         // on below line we are calling a method to add new
         // course to sqlite data and pass all our values to it.
 
-        dbHandler.addNewCourse(item_id, "courseDuration", item_id, "courseTracks");
-        // after adding the data we are displaying a toast message.
-        Toast.makeText(this, "Stock Item saved locally", Toast.LENGTH_SHORT).show();
+        boolean update_status = dbHandler.updateCourse(item_id, item_id, "courseDuration", item_id, "courseTracks");
+        if(update_status){
+            Toast.makeText(this, "New Stock scanned", Toast.LENGTH_LONG).show();
+        }
+        else{
+            Toast.makeText(this, "Stock already scanned", Toast.LENGTH_LONG).show();
+        }
 
         finish();
-        ///
-
-        //Intent intent = new Intent(this, ScrollViewActivity.class);
-        //intent.putExtra("scan_info", result.getText());
-        //startActivity(intent);
     }
 
 

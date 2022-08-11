@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -94,7 +95,56 @@ public class DBHandler extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    public boolean searchDuplicates(String keyword) {
+        SQLiteDatabase db = getReadableDatabase();
+        boolean found_status = false;
+
+        Cursor res = db.rawQuery( "select * from " + TABLE_NAME + " where " + NAME_COL +
+                                        " like ?", new String[]{"%" + keyword + "%"});
+
+
+        if ((res != null) && (res.getCount() > 0))
+            found_status =false;
+        else
+            found_status = true;
+        db.close();
+        return found_status;
+
+    }
+    // below is the method for updating our courses
+    public boolean updateCourse(String originalCourseName, String courseName, String courseDescription,
+                             String courseTracks, String courseDuration) {
+        boolean value_added;
+        // calling a method to get writable database.
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        // on below line we are passing all values
+        // along with its key and value pair.
+        values.put(NAME_COL, courseName);
+        values.put(DURATION_COL, courseDuration);
+        values.put(DESCRIPTION_COL, courseDescription);
+        values.put(TRACKS_COL, courseTracks);
+
+        // on below line we are calling a update method to update our database and passing our values.
+        // and we are comparing it with name of our course which is stored in original name variable.
+        int update_count = db.update(TABLE_NAME, values, "name=?", new String[]{originalCourseName});
+
+        if (update_count == 0){
+            addNewCourse(originalCourseName, "courseDuration", originalCourseName, "courseTracks");
+            value_added = true;
+        }
+        else {
+            value_added = false;
+        }
+        db.close();
+
+        return value_added;
+    }
+
+
     public ArrayList getAllStocks() {
+        //removeDuplicates();
         SQLiteDatabase db = getReadableDatabase();
         ArrayList<String> array_list = new ArrayList<String>();
         Cursor res = db.rawQuery( "select * from "+TABLE_NAME, null );
@@ -103,6 +153,7 @@ public class DBHandler extends SQLiteOpenHelper {
             array_list.add(res.getString(res.getColumnIndex("name")));
             res.moveToNext();
         }
+        db.close();
         return array_list;
     }
 }
