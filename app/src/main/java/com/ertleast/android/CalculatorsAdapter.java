@@ -1,10 +1,16 @@
 package com.ertleast.android;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.text.InputFilter;
+import android.text.InputType;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,12 +18,13 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 
 public class CalculatorsAdapter extends RecyclerView.Adapter<CalculatorsAdapter.ExampleViewHolder> {
     private ArrayList<CalculatorsItem> mExampleList;
     private Context mContext;
-
+    private String m_Text = "";
     public CalculatorsAdapter(Context context, ArrayList<CalculatorsItem> exampleList) {
         mExampleList = exampleList;
         mContext = context;
@@ -31,7 +38,7 @@ public class CalculatorsAdapter extends RecyclerView.Adapter<CalculatorsAdapter.
     }
 
     @Override
-    public void onBindViewHolder(ExampleViewHolder holder, final int position) {
+    public void onBindViewHolder(final ExampleViewHolder holder, final int position) {
         CalculatorsItem currentItem = mExampleList.get(position);
 
         holder.mImageView.setImageResource(currentItem.getImageResource());
@@ -42,8 +49,9 @@ public class CalculatorsAdapter extends RecyclerView.Adapter<CalculatorsAdapter.
             @Override
             public void onClick(View view) {
                 String calculator_uri = null;
-                Intent intent = new Intent(mContext, WebpageDetailsActivity.class);
-
+                //Intent intent = new Intent(mContext, WebpageDetailsActivity.class);
+                //Intent intent = new Intent(mContext, StockPhotoActivity.class);
+                /*
                 switch (position) {
                     case 0:
                         calculator_uri = "AbbreviatedMentalTestScore.html";
@@ -142,11 +150,44 @@ public class CalculatorsAdapter extends RecyclerView.Adapter<CalculatorsAdapter.
                         calculator_uri = "WaterDeficit.html";
                         break;
                 }
+                */
+                Context context = holder.itemView.getContext();
+                //String m_Text = "";
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                builder.setTitle("Update Location Info");
 
-                intent.putExtra("calculator_uri", "file:///android_asset/calculators/" + calculator_uri);
-                intent.putExtra("calculator_name", mExampleList.get(position).getText1());
+                // Set up the input
+                final EditText input = new EditText(context);
+                // Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
+                input.setInputType(InputType.TYPE_CLASS_TEXT  | InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS);
+                input.setFilters(new InputFilter[] {new InputFilter.LengthFilter(30)});
+                builder.setView(input);
 
-                mContext.startActivity(intent);
+                // Set up the buttons
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        m_Text = input.getText().toString();
+                        DBHandler dbHandler = new DBHandler(holder.itemView.getContext());
+                        Date date = new Date();
+                        String scanned_time = String.valueOf(date.getTime() / 1000L);
+                        dbHandler.updateCourse( mExampleList.get(position).getText1(),
+                                m_Text, scanned_time, "NULL");
+                    }
+                });
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+                builder.show();
+
+                //intent.putExtra("calculator_uri", "file:///android_asset/calculators/" + calculator_uri);
+                //intent.putExtra("position", mExampleList.get(position).getText1());
+                //Log.i("aniruddha",mExampleList.get(position).getText1());
+                //mContext.startActivity(intent);
             }
         });
     }

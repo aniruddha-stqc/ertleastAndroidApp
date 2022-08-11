@@ -34,12 +34,12 @@ public class CalculatorsHeaderActivity extends AppCompatActivity {
 
         ListIterator<String> listIterator =  dbHandler.getAllStocks().listIterator();
 
-        System.out.println("Forward iteration");
         ArrayList<CalculatorsItem> exampleList = new ArrayList<>();
-//Forward iterator
+        Log.i("aniruddha", String.valueOf(listIterator));
+
         while(listIterator.hasNext()) {
             //Log.d("aniruddha",listIterator.next() );
-            //String item_name = listIterator.next();
+            //String item_name = listIterator.;
             exampleList.add(new CalculatorsItem(R.drawable.ic_android, listIterator.next(), ""));
 
         }

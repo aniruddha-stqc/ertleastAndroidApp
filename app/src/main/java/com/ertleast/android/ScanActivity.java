@@ -20,6 +20,9 @@ import androidx.core.content.ContextCompat;
 
 import com.google.zxing.Result;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
 import static android.Manifest.permission.CAMERA;
@@ -168,8 +171,11 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
         DBHandler dbHandler = new DBHandler(this);
         // on below line we are calling a method to add new
         // course to sqlite data and pass all our values to it.
+        Date date = new Date();
+        String scanned_time = String.valueOf(date.getTime() / 1000L);
 
-        boolean update_status = dbHandler.updateCourse(item_id, item_id, "courseDuration", item_id, "courseTracks");
+        boolean update_status = dbHandler.updateCourse( item_id,
+                    "NULL", scanned_time, "NULL");
         if(update_status){
             Toast.makeText(this, "New Stock scanned", Toast.LENGTH_LONG).show();
         }

@@ -32,7 +32,7 @@ public class SpecialityFragment extends Fragment {
         //String uri = "https://bit.ly/2tslluf";;
         View view = inflater.inflate(R.layout.activity_speciality, container, false);
 
-        FetchSpecialityUpdate(view);
+        //FetchSpecialityUpdate(view);
 
         return view;
     }

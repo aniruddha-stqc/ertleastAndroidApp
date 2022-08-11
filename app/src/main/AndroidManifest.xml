@@ -78,6 +78,10 @@
             android:name="com.ertleast.android.WebpageDetailsActivity"
             android:screenOrientation="portrait"
             android:parentActivityName="com.ertleast.android.CalculatorsHeaderActivity" />
+        <activity
+            android:name="com.ertleast.android.StockPhotoActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName="com.ertleast.android.CalculatorsHeaderActivity" />
     </application>
 
 </manifest>

@@ -86,7 +86,7 @@ public class HomeFragment extends Fragment {
         //// Banner Slider
 
         //FetchNewsUpdate(view);
-        FetchRSSNewsUpdate(view);
+        //FetchRSSNewsUpdate(view);
 
         /// Banner Slider
 
@@ -99,7 +99,7 @@ public class HomeFragment extends Fragment {
 
 
         /// Horizontal Product Layout
-        FetchSpecialityUpdate(view);
+        //FetchSpecialityUpdate(view);
 
 
         /// Horizontal Product Layout
@@ -116,6 +116,7 @@ public class HomeFragment extends Fragment {
 
         String url = "http://thaipharmaindex.com/bio_mobile/android/ads_home.php";
 
+        /*
         makeRequest(url, new VolleyCallback() {
             @Override
             public void onSuccess(JSONObject result) throws JSONException {
@@ -172,7 +173,7 @@ public class HomeFragment extends Fragment {
             }
 
         });
-
+        */
 
     }
 

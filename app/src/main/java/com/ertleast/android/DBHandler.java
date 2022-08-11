@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -112,9 +113,10 @@ public class DBHandler extends SQLiteOpenHelper {
 
     }
     // below is the method for updating our courses
-    public boolean updateCourse(String originalCourseName, String courseName, String courseDescription,
+    public boolean updateCourse( String courseName, String courseDescription,
                              String courseTracks, String courseDuration) {
         boolean value_added;
+        String originalCourseName = courseName;
         // calling a method to get writable database.
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -125,13 +127,13 @@ public class DBHandler extends SQLiteOpenHelper {
         values.put(DURATION_COL, courseDuration);
         values.put(DESCRIPTION_COL, courseDescription);
         values.put(TRACKS_COL, courseTracks);
-
+        //Log.i("aniruddha", String.valueOf(values) );
         // on below line we are calling a update method to update our database and passing our values.
         // and we are comparing it with name of our course which is stored in original name variable.
         int update_count = db.update(TABLE_NAME, values, "name=?", new String[]{originalCourseName});
 
         if (update_count == 0){
-            addNewCourse(originalCourseName, "courseDuration", originalCourseName, "courseTracks");
+            addNewCourse(originalCourseName, "courseDuration", courseDescription, courseTracks);
             value_added = true;
         }
         else {
@@ -145,12 +147,22 @@ public class DBHandler extends SQLiteOpenHelper {
 
     public ArrayList getAllStocks() {
         //removeDuplicates();
+
         SQLiteDatabase db = getReadableDatabase();
+        //ArrayList<CalculatorsItem> array_list = new ArrayList<CalculatorsItem>();
         ArrayList<String> array_list = new ArrayList<String>();
-        Cursor res = db.rawQuery( "select * from "+TABLE_NAME, null );
+        Cursor res = db.rawQuery( "select * from "+ TABLE_NAME + " order by tracks desc ", null );
         res.moveToFirst();
+
         while(res.isAfterLast() == false) {
-            array_list.add(res.getString(res.getColumnIndex("name")));
+
+            String display_info = res.getString(res.getColumnIndex("name")) ;
+            String location_info = res.getString(res.getColumnIndex("description"));
+            String time_info = res.getString(res.getColumnIndex("tracks"));
+            //array_list.add(new CalculatorsItem (R.drawable.ic_android,display_info, location_info));
+
+            array_list.add(display_info);
+            Log.i("aniruddha",display_info );
             res.moveToNext();
         }
         db.close();

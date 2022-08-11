@@ -54,7 +54,7 @@ dependencies {
     implementation 'org.jsoup:jsoup:1.12.1'
 
     // Auto Slider
-
+    compile 'de.hdodenhof:circleimageview:2.1.0'
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     testImplementation 'junit:junit:4.12'
